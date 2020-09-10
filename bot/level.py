@@ -67,8 +67,19 @@ async def level_up(users, user, channel):
 @client.command(aliases=['nivel'])
 async def level(ctx):
     user_id = str(ctx.author.id)
-    if len(ctx.message.content)==27:
-        new_id=ctx.message.content[9:]
+    if len(message.content)!=8:
+        new_id=message.content[9:]
+        if not(new_id.isdigit()):
+            new_id=messsage.mentions[0]
+            #Abre condicional para caso o valor em mention seja None não der ruim.
+            if isinstance(new_id, Member):
+                new_id=str(new_id.id)
+            else:
+                #Mais para frente, vamos tentar mexer no querry para
+                #pegar alguém com nome parecido caso ninguém tenha sido
+                #mencionado. Por enquanto, retorna "foo".
+                new_id="foo"
+        
         if new_id in users:
             user_id = new_id
     with open('users.json', 'r') as f:
@@ -78,6 +89,10 @@ async def level(ctx):
         levelbed.set_thumbnail(url='https://cdn.discordapp.com/attachments/676574583083499532/752314249610657932/1280px-Flag_of_the_Galactic_Republic.png')
         await ctx.send(embed=levelbed)
 
+@client.command(aliases=['debugging'])
+async def debug(ctx):
+    await ctx.send(str(message.mentions))                                 
+                                 
 @client.command(aliases=['board'])
 async def rank(ctx):
     user_id = str(ctx.author.id)
