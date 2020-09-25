@@ -41,7 +41,7 @@ async def help(ctx):
 
 @client.command()
 async def ping(ctx):
-    ping = discord.Embed(title='Pong...', description=f'{round(client.latency * 1000)}ms', colour=discord.Color.blurple(), timestamp=ctx.message.created_at)
+    ping = discord.Embed(title='Pong...', description=f'{os.getlogin().title()}\n{round(client.latency * 1000)}ms', colour=discord.Color.blurple(), timestamp=ctx.message.created_at)
     await ctx.send(embed=ping)
 
 @client.command(aliases=['limpar', 'clean'])
@@ -64,4 +64,11 @@ async def sorte(ctx):
     previsao = ['Cara', 'Coroa']
     await ctx.send(f'{random.choice(previsao)}')
 
+@client.command()
+async def myname(ctx):
+    await ctx.send(ctx.author.name)
 #os.system('python level.py')
+
+@client.command()
+async def who(ctx):
+    await ctx.send(os.getlogin().title())
