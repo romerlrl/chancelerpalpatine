@@ -1,0 +1,29 @@
+{
+	"jogadores":
+	{
+	"comentario_de_json":"As chaves são obviamente ids do Discord e o valor o número de jogo",
+	"279432001621065735":1,
+	 "255068526300102668":1,
+	 "432111717259149313":2,
+	 "297100821047541760":2},
+	"jogos":{"1":
+			{
+				"comentario_de_json":"turno recebe um valor booleano, respondendo se é a vez do jogador1, fim de jogo recebe now()",
+				"matriz":[[1, 1, 0], [-1, 1, 0], [0, -1, -1]],
+				"canal":"384148772826906624",
+				"jogador1":"279432001621065735",
+				"jogador2":"255068526300102668", 
+				"turno":"0",
+				"hora":"0"
+			}, 
+		"2":
+			{
+				"matriz":[[1, 0, -1], [0, 1, 0], [-1, 0, 0]], 
+				"canal":"384148772826906624", 
+				"jogador1":"432111717259149313", 
+				"jogador2":"297100821047541760", 
+				"turno":"1",
+				"hora":"0"
+			}
+		}
+}
