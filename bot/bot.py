@@ -144,6 +144,7 @@ async def busca(ctx, *args):
         'google':'https://www.google.com/search?q=',
         'aw':'https://avatar.fandom.com/pt-br/wiki/',
         'avatar':'https://avatar.fandom.com/pt-br/wiki/',
+        'snk':'https://shingekinokyojin.fandom.com/pt-br/wiki/'
     }
     
     if args[0].lower() in dicio_serviços:
@@ -153,3 +154,9 @@ async def busca(ctx, *args):
         buscador = dicio_serviços["google"]
         entrada = " ".join(args)
     await ctx.send(f'{buscador}{entrada.replace(" ", "_")}')
+
+@client.command()
+async def voice(ctx):
+    if ctx.author.name =='Romer':
+        foo=input()
+        await ctx.send(foo)
