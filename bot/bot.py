@@ -37,8 +37,8 @@ async def iroh(ctx):
             "Sometimes life is like this dark tunnel. You can’t always see the light at the end of the tunnel, but if you just keep moving, you will come to a better place.",
             "Life happens wherever you are, whether you make it or not.",
             "Pride is not the opposite of shame, but its source. True humility is the only antidote to shame.",
-            "You sound like my nephew, always thinking that you need to do things on your own without anyone’s support."
-            "There is nothing wrong with letting people who love you help you.",
+            ("You sound like my nephew, always thinking that you need to do things on your own without anyone’s support.\n"+
+            "There is nothing wrong with letting people who love you help you."),
             "You must never give in to despair. Allow yourself to slip down that road and you surrender to your lowest instincts. In the darkest times, hope is something you give yourself. That is the meaning of inner strength.",
             "It is time for you to look inward, and start asking yourself the big questions.\nWho are you? And what do you want?",
             "Spoiler de Avatar inteiro || https://tenor.com/zPYD.gif ||"]
