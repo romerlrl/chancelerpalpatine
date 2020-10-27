@@ -32,6 +32,23 @@ async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=discord.Game(f'Planejando uma ordem surpresa'))
     print('É bom te ver, mestre Jedi.')
 
+@client.command()
+async def iroh(ctx):
+    frases=["It is important to draw wisdom from many different places. If we take it from only one place, it becomes rigid and stale."
+            "Destiny is a funny thing. You never know how things are going to work out. But if you keep an open mind and an open heart, I promise you will find your own destiny someday.",
+            "There is nothing wrong with a life of peace and prosperity. I suggest you think about what it is that you want from your life, and why.",
+            "Perfection and power are overrated. I think you are very wise to choose happiness and love.",
+            "Sometimes life is like this dark tunnel. You can’t always see the light at the end of the tunnel, but if you just keep moving, you will come to a better place.",
+            "Life happens wherever you are, whether you make it or not.",
+            "Pride is not the opposite of shame, but its source. True humility is the only antidote to shame.",
+            "You sound like my nephew, always thinking that you need to do things on your own without anyone’s support."
+            "There is nothing wrong with letting people who love you help you.",
+            "You must never give in to despair. Allow yourself to slip down that road and you surrender to your lowest instincts. In the darkest times, hope is something you give yourself. That is the meaning of inner strength.",
+            "It is time for you to look inward, and start asking yourself the big questions.\nWho are you? And what do you want?",
+            "Spoiler de Avatar inteiro || https://tenor.com/zPYD.gif ||"]
+    foo=random.choice(frases)+'\nPara traduzir digite \.tr pt {frase}'
+    await ctx.send(foo)
+
 @client.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.BadArgument) and 'User' in str(error) and 'not found' in str(error):
@@ -160,3 +177,6 @@ async def voice(ctx):
     if ctx.author.name =='Romer':
         foo=input()
         await ctx.send(foo)
+@client.command()
+async def who(ctx):
+    await ctx.send('https://tenor.com/1Lh4.gif')
