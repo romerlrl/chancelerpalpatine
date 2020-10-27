@@ -18,7 +18,7 @@ from bot import client
 from bot.bot import *
 from bot.chess_cmds import *
 from bot.level import *
-#from bot.akinator_cmds import *
+from bot.akinator_cmds import *
 from bot.watergate import *
 
 load_dotenv()
