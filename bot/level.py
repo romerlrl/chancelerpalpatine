@@ -5,6 +5,7 @@ import os
 import time
 from discord.ext import commands
 from bot import client
+from bot import gatilhos
 
 @client.event
 async def on_member_join(member):
@@ -18,42 +19,12 @@ async def on_member_join(member):
 
 @client.event
 async def on_message(message):
-    if message.content.lower().startswith('odeio'):
-        await message.channel.send('Sim, deixe o ódio fluir por você... <:sheev:735473486046298173>')
-
-    if message.content.lower().startswith('ban'):
-        await message.channel.send('Mate-o, mate-o agora...')
-
-    if message.content.lower().startswith('i shouldnt'):
-        await message.channel.send('DEW IT!')
-
-    if message.content.lower().startswith('i shouldn\'t'):
-        await message.channel.send('DEW IT!')
-
-    if message.content.lower().startswith('-poll'):
-        await message.channel.send('Eu amo democracia!')
-
-    if message.content.lower().startswith('votação'):
-        await message.channel.send('Eu amo democracia!')
-
-    if message.content.lower().startswith('voto'):
-        await message.channel.send('Eu amo democracia!')
-
-    if message.content.lower().startswith('democracia'):
-        await message.channel.send('Eu amo democracia!')
-
-    if message.content.lower().startswith('estou muito fraco'):
-        await message.channel.send('PODER ILIMITADOOOOOO!')
-
-    if message.content.lower().startswith('você é muito sábio'):
-        await message.channel.send('Já ouviu a tragédia de Darth Plagueis, o sábio?')
-
-    if message.content.lower().startswith('tão sábio'):
-        await message.channel.send('Já ouviu a tragédia de Darth Plagueis, o sábio?')
-
-    if message.content.lower().startswith('sábio'):
-        await message.channel.send('Já ouviu a tragédia de Darth Plagueis, o sábio?')
-
+    if os.environ.get("startswith"):
+        await gatilhos.inicio(message)
+    if os.environ.get("impressorabrr"):
+        print(message)
+        print(message.content)
+        
     with open('users.json', 'r') as f:
         users = json.load(f)
 
