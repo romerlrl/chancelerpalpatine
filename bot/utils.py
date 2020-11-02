@@ -23,3 +23,17 @@ def run_cpu_bound_task_with_event_loop(func, *args, **kwargs):
 
 def convert_users_to_players(*args):
         return tuple(map(lambda user: Player(user) if user else None, args))
+
+def IdParaNome(number):
+    #if msg.isdigit():
+    #    msg=int(msg)
+    #meuid=279432001621065735
+    
+    user = get(client.get_all_members(), id=int(number))
+    if user:
+        return user.name
+    else:
+        #Fulcrum é uma referência a Rebels,
+        #que como vocês já sabem, não vi.
+        return "Fulcrum"
+    
