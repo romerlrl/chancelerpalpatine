@@ -146,6 +146,7 @@ async def busca(ctx, *args):
         'google':'https://www.google.com/search?q=',
         'aw':'https://avatar.fandom.com/pt-br/wiki/',
         'avatar':'https://avatar.fandom.com/pt-br/wiki/',
+        'snk':'https://shingekinokyojin.fandom.com/pt-br/wiki/'
     }
     
     if args[0].lower() in dicio_serviços:
@@ -155,3 +156,7 @@ async def busca(ctx, *args):
         buscador = dicio_serviços["google"]
         entrada = " ".join(args)
     await ctx.send(f'{buscador}{entrada.replace(" ", "_")}')
+
+@client.command()
+async def who(ctx):
+    await ctx.send('https://tenor.com/1Lh4.gif')
