@@ -10,6 +10,7 @@ from bot.bot import *
 from bot.chess_cmds import *
 from bot.level import *
 from bot.sww_cmds import *
+from bot.watergate import *
 
 load_dotenv()
 

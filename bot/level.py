@@ -5,6 +5,8 @@ import os
 import time
 from discord.ext import commands
 from bot import client
+#import re
+#if os.environ.get("MyName")=="Romer": from bot import watergate as wg
 
 @client.event
 async def on_member_join(member):
