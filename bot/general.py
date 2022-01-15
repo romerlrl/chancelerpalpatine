@@ -20,6 +20,7 @@ from bot.social.profile import Profile
 from bot.utils import (PaginatedEmbedManager, current_bot_version,
                        get_server_lang, i, paginate, server_language_to_tz)
 
+from bot.termoo import Termoo 
 
 class GeneralCog(commands.Cog):
     """
@@ -33,6 +34,7 @@ class GeneralCog(commands.Cog):
         self.scheduler_bot = Scheduler()
         self.scheduler_bot.register_function('send_msg', self._send_msg)
         self.scheduler_bot.start()
+        self.termoo_games = {}
 
     @commands.Cog.listener()
     async def on_ready(self):
@@ -560,3 +562,24 @@ class GeneralCog(commands.Cog):
         response_msg = await ctx.send(embed=embed)
         for emoji in emoji_answers_vote[:len(choices)]:
             await response_msg.add_reaction(emoji)
+
+    @cog_ext.cog_slash(
+        name="termoo",
+        description="Tente a sorte com o termoo",
+        options=[
+            create_option(name="guess", description="Qual seu palpite?", option_type=3, required=False),
+            create_option(name="restart", description="Reinicia o jogo?", option_type=3, required=False)
+
+        ]
+    )
+    async def termoo(self, ctx, guess, restart: bool):
+        game = self.termoo_games.get(ctx.message.server.id, None)
+        if restart or (game is None ):
+            self.termoo_games[ctx.message.server.id] = Termoo()
+            await ctx.send("New game")
+            return
+        turn = game.e2e(guess)
+        if game.over:
+            turn = "You win \n"+turn
+            self.termoo_games[ctx.message.server.id] = None
+        await ctx.send(turn)
