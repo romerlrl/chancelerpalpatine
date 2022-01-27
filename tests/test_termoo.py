@@ -1,5 +1,5 @@
 from unittest import TestCase
-from bot.termoo import Termoo
+from bot.termooo.termoo import Termoo
 
 class TestTermoo(TestCase):
     
@@ -9,7 +9,7 @@ class TestTermoo(TestCase):
     
     def test_if_word_out_of_csv_is_invalid(self):
         game = Termoo()
-        guess = game.e2e("MAGOA")
+        guess = game.e2e("ABCDE")
         self.assertEqual(guess, "invalid word")
     
     def test_cool_game(self):
