@@ -6,7 +6,7 @@ class Termoo:
         self.choice()
     
     def choice(self):
-        with open('bot/termoo.csv') as e:
+        with open('bot/termooo/termoo.csv') as e:
             self.words = set(e.readlines())
         self.word = choice(list(self.words)).strip()
         self.over = False
