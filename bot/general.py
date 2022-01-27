@@ -20,7 +20,7 @@ from bot.social.profile import Profile
 from bot.utils import (PaginatedEmbedManager, current_bot_version,
                        get_server_lang, i, paginate, server_language_to_tz)
 
-from bot.termoo import Termoo 
+from bot.termooo.termoo import Termoo 
 
 class GeneralCog(commands.Cog):
     """
